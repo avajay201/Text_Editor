@@ -1,0 +1,33 @@
+{% extends 'basic.html' %}
+{% block title %}Text Editor - Result{% endblock title %}
+{% block active %}active{% endblock active %}
+{% block body %}
+<div class="container my-3">
+    <h2 align="center">Your Analyzed Text</h2>
+    <div class="container my-5" align="center">
+        <textarea rows="13" cols="80" name="myInput" id="myInput">{{result}}</textarea>
+    </div>
+    <div align="center">
+        <button class="btn btn-success" onclick="myFunction()">Copy text</button>
+    </div>
+</div>
+{% endblock body %}
+
+{% block js %}
+       
+function myFunction() {
+    /* Get the text field */
+    var copyText = document.getElementById("myInput");
+
+    /* Select the text field */
+    copyText.select();
+    
+    copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+    /* Copy the text inside the text field */
+    navigator.clipboard.writeText(copyText.value);
+
+    /* Alert the copied text */
+    alert("Copied the text");
+}
+{% endblock js %}

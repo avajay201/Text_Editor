@@ -1,0 +1,29 @@
+{% extends 'basic.html' %}
+{% block title %}Text Editor - Contact{% endblock title %}
+{% block contactactive %}active{% endblock contactactive %}
+{% block body %}
+<div class="container">
+    <h2 class="my-5" align="center" style="
+    background-color: #dcc8c8;
+    color: #47305d;
+">Tell Us Your Queries</h2>
+    <form class="row g-3" action="/contact" method="post">
+        {% csrf_token %}
+        <div class="col-md-12">
+            <label for="name" class="form-label"><b>Name</b></label>
+            <input type="text" class="form-control" required name="name" id="name">
+        </div>
+        <div class="col-md-12">
+            <label for="email" class="form-label"><b>Email</b></label>
+            <input type="email" class="form-control" required name="email" id="email">
+        </div>
+        <div class="col-12">
+            <label for="query" class="form-label"><b>Your Query</b></label>
+            <input type="text" class="form-control" required name="query" id="query">
+        </div>
+        <div class="col-12" align="center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+{% endblock body %}
