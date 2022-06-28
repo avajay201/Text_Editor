@@ -1,1 +1,1 @@
-web : textutils.wsgi.py
+web: gunicorn textutils.wsgi
