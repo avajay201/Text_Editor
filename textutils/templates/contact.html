@@ -8,7 +8,6 @@
     color: #47305d;
 ">Tell Us Your Queries</h2>
     <form class="row g-3" action="/contact" method="post">
-        {% csrf_token %}
         <div class="col-md-12">
             <label for="name" class="form-label"><b>Name</b></label>
             <input type="text" class="form-control" required name="name" id="name">
