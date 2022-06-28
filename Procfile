@@ -1,1 +1,1 @@
-web:textutils.wsgi
+web : textutils.wsgi.py
