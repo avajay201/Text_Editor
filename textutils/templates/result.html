@@ -3,31 +3,53 @@
 {% block active %}active{% endblock active %}
 {% block body %}
 <div class="container my-3">
-    <h2 align="center">Your Analyzed Text</h2>
+    <h2 align="center">Your Analyzed Data : </h2>
+    <h2 align="center" id="prps">{{ purpose }}</h2>
+    <!-- <div class="container my-5" align="center">
+        <textarea rows="13" cols="80" name="myInput" id="myInput">{{ result }}</textarea>
+    </div> -->
     <div class="container my-5" align="center">
-        <textarea rows="13" cols="80" name="myInput" id="myInput">{{result}}</textarea>
+        <p id="result">{{ result }}</p>
     </div>
     <div align="center">
-        <button class="btn btn-success" onclick="myFunction()">Copy text</button>
+        <button class="btn btn-success" onclick="copyfunc()">Copy Text</button>
     </div>
 </div>
 {% endblock body %}
 
 {% block js %}
-       
-function myFunction() {
-    /* Get the text field */
-    var copyText = document.getElementById("myInput");
 
-    /* Select the text field */
-    copyText.select();
-    
-    copyText.setSelectionRange(0, 99999); /* For mobile devices */
 
-    /* Copy the text inside the text field */
-    navigator.clipboard.writeText(copyText.value);
+function Purpose_bold() {
+    rslt = document.getElementById('result').innerText;
+    document.getElementById('result').innerHTML = `<b>${rslt}</b>`;
+}
 
-    /* Alert the copied text */
-    alert("Copied the text");
+function Purpose_italic() {
+    rslt = document.getElementById('result').innerText;
+    document.getElementById('result').innerHTML = `<i>${rslt}</i>`;
+}
+chnageresult()
+function chnageresult() {
+    let ele = document.getElementById('prps').innerText;
+    if (ele == 'Bold') {
+        Purpose_bold();
+    }
+    else if (ele == 'Italic') {
+        Purpose_italic();
+    }
+}
+
+function copyfunc() {
+    console.log('runnig')
+    var text = document.getElementById('result').innerText;
+    var elem = document.createElement("textarea");
+    document.body.appendChild(elem);
+    elem.value = text;
+    elem.select();
+    document.execCommand('copy');
+    document.body.removeChild(elem);
+    alert("Copied!");
+
 }
 {% endblock js %}

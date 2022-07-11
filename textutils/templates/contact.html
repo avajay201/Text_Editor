@@ -1,12 +1,27 @@
 {% extends 'basic.html' %}
 {% block title %}Text Editor - Contact{% endblock title %}
+{% block style %}
+body{
+    background-color : #f9e1e1;
+}
+
+.my-5{
+    background-color: #ffffff;
+    color: #b196cb;
+    margin-left: 220px;
+    margin-right: 220px;
+    border: 2px solid #88bacf;
+}
+
+#name, #email, #query, #btn{
+    border: 2px solid #88bacf;
+}
+
+{% endblock style %}
 {% block contactactive %}active{% endblock contactactive %}
 {% block body %}
 <div class="container">
-    <h2 class="my-5" align="center" style="
-    background-color: #dcc8c8;
-    color: #47305d;
-">Tell Us Your Queries</h2>
+    <h2 class="my-5" align="center">Tell Us Your Queries</h2>
     <form class="row g-3" action="/contact" method="post">
 	{% csrf_token %}
         <div class="col-md-12">
@@ -22,7 +37,7 @@
             <input type="text" class="form-control" required name="query" id="query">
         </div>
         <div class="col-12" align="center">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" id="btn" class="btn btn-outline-info my-3">Submit</button>
         </div>
     </form>
 </div>

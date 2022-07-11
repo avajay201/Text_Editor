@@ -56,6 +56,19 @@ font-size:16px;
 text-decoration: none;
 color:#6600ff;
 }
+
+.col-4{
+width: 25.333%;
+}
+
+.second{
+padding-left: 56px;
+}
+
+.row{
+    padding-left: 240px;
+    margin-top: -7px;
+}
 {% endblock style %}
 {% block body %}
 <div class="container">
@@ -71,36 +84,88 @@ color:#6600ff;
     <h3 class="my-1" style="color: red;" align="center"><b>Enter yout text here -</b></h3>
     <form action="/result/" method="post">
         {% csrf_token %}
-        <div class="col-12 my-2" align="center">
-            <textarea rows="9" cols="80" name="text" id="text"></textarea>
+        <div class="col-12 my-2">
+            <div class="text-center">
+                <textarea rows="9" cols="80" name="text" id="text"></textarea>
+            </div>
             <br>
-            <div class="col-5 my-1" style="
-            padding-left: 70px;
-        ">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="removepunc" name="removepunc">
-                    <label class="form-check-label" for="check1"><b>Remove Puncuations</b></label>
+            <div class="row">
+                <div class="col-4 first">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="removepunc" name="removepunc">
+                        <label class="form-check-label" for="removepunc"><b>Puncuations Remove</b></label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="newlineremove" name="newlineremove">
+                        <label class="form-check-label" for="newlineremove"><b>NewLine Remove</b></label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="espaceremove" name="espaceremove">
+                        <label class="form-check-label" for="espaceremove"><b>Extra Space Remove</b></label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="uppercase" name="uppercase">
+                        <label class="form-check-label" for="uppercase"><b>UPPERCASE</b></label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="lowercase" name="lowercase">
+                        <label class="form-check-label" for="lowercase"><b>Lower Case</b></label>
+                    </div>
                 </div>
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="fullcaps" name="fullcaps">
-                    <label class="form-check-label" for="check2"><b>UPPERCASE</b></label>
+
+
+                <div class="col-4 second">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="boldtext" name="boldtext">
+                        <label class="form-check-label" for="boldtext"><b>Bold</b></label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="italictext" name="italictext">
+                        <label class="form-check-label" for="italictext"><b>Italic</b></label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="str" name="str">
+                        <label class="form-check-label" for="str"><b>String</b></label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="int" name="int">
+                        <label class="form-check-label" for="int"><b>Integer</b></label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="capitalize" name="capitalize">
+                        <label class="form-check-label" for="capitalize"><b>Capitalize</b></label>
+                    </div>
                 </div>
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="newlineremove" name="newlineremove">
-                    <label class="form-check-label" for="check3"><b>NewLine Remove</b></label>
-                </div>
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="espaceremove" name="espaceremove">
-                    <label class="form-check-label" for="check4"><b>Extra Space Remove</b></label>
-                </div>
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="charcount" name="charcount">
-                    <label class="form-check-label" for="check5"><b>Characters Count</b></label>
+
+                <div class="col-4 third">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="charcount" name="charcount">
+                        <label class="form-check-label" for="charcount"><b>Character Count</b></label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="spacecount" name="spacecount">
+                        <label class="form-check-label" for="spacecount"><b>Space Count</b></label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="strcount" name="strcount">
+                        <label class="form-check-label" for="strcount"><b>String Count</b></label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="intcount" name="intcount">
+                        <label class="form-check-label" for="intcount"><b>Integer Count</b></label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="comming" name="comming">
+                        <label class="form-check-label" for="comming"><b>Comming Soon...</b></label>
+                    </div>
                 </div>
             </div>
 
-            <div align="center"><button class="btn btn-success my-2" type="submit" id="analyze">Analyze</button></div>
+            <div align="center"><button class="btn btn-success my-3" type="submit" id="analyze">Analyze</button></div>
         </div>
     </form>
 </div>
 {% endblock body %}
+{% block js %}
+
+{% endblock js %}
