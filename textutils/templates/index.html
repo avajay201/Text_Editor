@@ -1,82 +1,12 @@
 {% extends 'basic.html' %}
 {% block head %}
 {% load static %}
-<!-- <link rel="stylesheet" media="screen and (max-width:400px)" href="{% static 'css/index_media.css' %}"> -->
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+<link rel="stylesheet" media="screen and (max-width:400px)" href="{% static 'css/index_media.css' %}">
 {% endblock head %}
 {% block title %}Text Editor{% endblock title %}
 {% block style %}
-marquee {
-    margin-top: 0px;
-    width: 60%;
-    }
-    
-    .runtext-container {
-    background-color:#ddddff;
-    *background-color:#ccf;
-    background-image:-moz-linear-gradient(top,#ccf,#fff);
-    background-image:-webkit-gradient(linear,0 0,0 100%,from(#ccf),to(#fff));
-    background-image:-webkit-linear-gradient(top,#ccf,#fff);
-    background-image:-o-linear-gradient(top,#ccf,#fff);
-    background-image:linear-gradient(to bottom,#ccf,#fff);
-    background-repeat:repeat-x;
-    border: 3px solid #000000;
-    
-    width: 850px;
-    overflow-x: hidden;
-    overflow-y: visible;
-    margin: 0 60px 0 30px;
-    padding:0 3px 0 3px;
-    }
-    
-    .main-runtext {margin: 0 auto;
-    overflow: visible;
-    position: relative;
-    height: 40px;
-    }
-    
-    .runtext-container .holder {
-    position: relative;
-    overflow: visible;
-    display:inline;
-    float:left;
-    
-    }
-    
-    .runtext-container .holder .text-container {
-    display:inline;
-    }
-    
-    .runtext-container .holder a{
-    text-decoration: none;
-    font-weight: bold;
-    color:#ff0000;
-    text-shadow:0 -1px 0 rgba(0,0,0,0.25);
-    line-height: -0.5em;
-    font-size:16px;
-    }
-    
-    .runtext-container .holder a:hover{
-    text-decoration: none;
-    color:#6600ff;
-    }
-    
-    .col-4{
-    width: 24.333%;
-    }
-    
-    .row{
-        padding-left: 126px;
-        padding-right: 89px;
-        margin-top: -18px;
-    }
-    
-    .welcome{
-        color: rgba(0, 255, 42, 0.884);
-    }
-    
-    .textarea{
-        color: red;
-    }
+
 {% endblock style %}
 {% block indexactive %}active{% endblock indexactive %}
 {% block body %}
