@@ -1,0 +1,49 @@
+body {
+  background-color: red;
+}
+
+.runtext-container{
+  width: 400px;
+  margin: 0px 60px 0 -12px;
+  padding: 0 0px 0 0px;
+}
+
+marquee{
+  margin-top: 0px;
+  width: 100%;
+}
+
+.textarea{
+  color: white;
+}
+
+textarea{
+  height: 5cm;
+  width: 10cm;
+}
+
+.col-4{
+  width: 28.333%;
+  }
+
+.row{
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-top: -18px;
+}
+
+.first{
+  padding-left: 0px;
+}
+
+.second{
+  padding-left: 15px;
+}
+
+.third{
+  padding-right: 11px;
+}
+
+.form-check-label{
+  font-size: 12px;
+}

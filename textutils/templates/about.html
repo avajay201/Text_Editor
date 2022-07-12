@@ -2,23 +2,9 @@
 {% block title %}Text Editor - About{% endblock title %}
 {% block aboutactive %}active{% endblock aboutactive %}
 {% block style %}
-
-html {
-box-sizing: border-box;
+body{
+    background-color: #474e5d;
 }
-
-.column {
-float: left;
-width: 33.3%;
-margin-bottom: 16px;
-padding: 0 8px;
-}
-
-.card {
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-margin: 8px;
-}
-
 .about-section {
 padding: 50px;
 text-align: center;
@@ -26,86 +12,19 @@ background-color: #474e5d;
 color: white;
 }
 
-.container {
-padding: 0 16px;
-}
-
-.container::after, .row::after {
-content: "";
-clear: both;
-display: table;
-}
-
-.title {
-color: grey;
-}
-
-.button {
-border: none;
-outline: 0;
-display: inline-block;
-padding: 8px;
-color: white;
-background-color: #000;
-text-align: center;
-cursor: pointer;
-width: 100%;
-}
-
-.button:hover {
-background-color: #555;
-}
-
 {% endblock style %}
 {% block body %}
 {% load static %}
 
 <body>
+    <div class="container">
     <div class="about-section">
         <h1>About Us</h1>
         <p>Text Editor</p>
         <p>In this website you can edit your text data. if you seen any problem in this website you can tell us your
             problem.</p>
+            <a class="btn btn-outline-info my-2" href="/contact">Go to Contact</a>
     </div>
-    {% load static %}
-    <h2 class="my-2" style="text-align:center">Our Team</h2>
-    <div class="row">
-        <div class="column">
-            <div class="card">
-                <img src="{% static '/images/backend.png' %}" alt="image" style="width:50%; margin-left: 100px;">
-                <div class="container">
-                    <h2 style="margin-left: 102px;">Amyra Khan</h2>
-                    <p class="title" style="margin-left: 122px;">Fronted Developer</p>
-                    <p>Web Developer</p>
-                    <p>Jaipur, Rajasthan</p>
-                    <p><a href="/contact"><button class="button">Contact</button></a></p>
-                </div>
-            </div>
-        </div>
+</div>
 
-        <div class="column">
-            <div class="card">
-                <img src="{% static '/images/fronted.png' %}" alt="image" style="width:50%; margin-left: 100px;">
-                <div class="container">
-                    <h2 style="margin-left: 94px;">Kapil Shrama</h2>
-                    <p class="title" style="margin-left: 119px;">Backend Developer</p>
-                    <p>Web Developer</p>
-                    <p>Bangloure, Karnatka</p>
-                    <p><a href="/contact"><button class="button">Contact</button></a></p>
-                </div>
-            </div>
-        </div>
-        <div class="column">
-            <div class="card">
-                <img src="{% static '/images/designer.png' %}" alt="image" style="width:50%; margin-left: 100px;">
-                <div class="container">
-                    <h2 style="margin-left: 92px;">Anamika Sain</h2>
-                    <p class="title" style="margin-left: 160px;">Designer</p>
-                    <p>Web Developer</p>
-                    <p>Mumbai, Maharashtra</p>
-                    <p><a href="/contact"><button class="button">Contact</button></a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-    {% endblock body %}
+{% endblock body %}

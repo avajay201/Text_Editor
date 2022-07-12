@@ -12,10 +12,13 @@
     {% load static %}
   <link rel="icon"
     href="{% static 'images/favicon.ico' %}">
+  
+    {% block head %}{% endblock head %}
+    
+</head>
 
   <title>{% block title %}{% endblock title %}</title>
   <style>{% block style %}{% endblock style %}</style>
-</head>
 
 <body>
 

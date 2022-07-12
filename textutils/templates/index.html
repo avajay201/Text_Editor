@@ -1,87 +1,96 @@
 {% extends 'basic.html' %}
+{% block head %}
+{% load static %}
+<!-- <link rel="stylesheet" media="screen and (max-width:400px)" href="{% static 'css/index_media.css' %}"> -->
+{% endblock head %}
 {% block title %}Text Editor{% endblock title %}
-{% block indexactive %}active{% endblock indexactive %}
 {% block style %}
 marquee {
-margin-top: 0px;
-width: 60%;
-}
-
-.runtext-container {
-background-color:#ddddff;
-*background-color:#ccf;
-background-image:-moz-linear-gradient(top,#ccf,#fff);
-background-image:-webkit-gradient(linear,0 0,0 100%,from(#ccf),to(#fff));
-background-image:-webkit-linear-gradient(top,#ccf,#fff);
-background-image:-o-linear-gradient(top,#ccf,#fff);
-background-image:linear-gradient(to bottom,#ccf,#fff);
-background-repeat:repeat-x;
-border: 3px solid #000000;
-
-width: 850px;
-overflow-x: hidden;
-overflow-y: visible;
-margin: 0 60px 0 30px;
-padding:0 3px 0 3px;
-}
-
-.main-runtext {margin: 0 auto;
-overflow: visible;
-position: relative;
-height: 40px;
-}
-
-.runtext-container .holder {
-position: relative;
-overflow: visible;
-display:inline;
-float:left;
-
-}
-
-.runtext-container .holder .text-container {
-display:inline;
-}
-
-.runtext-container .holder a{
-text-decoration: none;
-font-weight: bold;
-color:#ff0000;
-text-shadow:0 -1px 0 rgba(0,0,0,0.25);
-line-height: -0.5em;
-font-size:16px;
-}
-
-.runtext-container .holder a:hover{
-text-decoration: none;
-color:#6600ff;
-}
-
-.col-4{
-width: 25.333%;
-}
-
-.second{
-padding-left: 56px;
-}
-
-.row{
-    padding-left: 240px;
-    margin-top: -7px;
-}
+    margin-top: 0px;
+    width: 60%;
+    }
+    
+    .runtext-container {
+    background-color:#ddddff;
+    *background-color:#ccf;
+    background-image:-moz-linear-gradient(top,#ccf,#fff);
+    background-image:-webkit-gradient(linear,0 0,0 100%,from(#ccf),to(#fff));
+    background-image:-webkit-linear-gradient(top,#ccf,#fff);
+    background-image:-o-linear-gradient(top,#ccf,#fff);
+    background-image:linear-gradient(to bottom,#ccf,#fff);
+    background-repeat:repeat-x;
+    border: 3px solid #000000;
+    
+    width: 850px;
+    overflow-x: hidden;
+    overflow-y: visible;
+    margin: 0 60px 0 30px;
+    padding:0 3px 0 3px;
+    }
+    
+    .main-runtext {margin: 0 auto;
+    overflow: visible;
+    position: relative;
+    height: 40px;
+    }
+    
+    .runtext-container .holder {
+    position: relative;
+    overflow: visible;
+    display:inline;
+    float:left;
+    
+    }
+    
+    .runtext-container .holder .text-container {
+    display:inline;
+    }
+    
+    .runtext-container .holder a{
+    text-decoration: none;
+    font-weight: bold;
+    color:#ff0000;
+    text-shadow:0 -1px 0 rgba(0,0,0,0.25);
+    line-height: -0.5em;
+    font-size:16px;
+    }
+    
+    .runtext-container .holder a:hover{
+    text-decoration: none;
+    color:#6600ff;
+    }
+    
+    .col-4{
+    width: 24.333%;
+    }
+    
+    .row{
+        padding-left: 126px;
+        padding-right: 89px;
+        margin-top: -18px;
+    }
+    
+    .welcome{
+        color: rgba(0, 255, 42, 0.884);
+    }
+    
+    .textarea{
+        color: red;
+    }
 {% endblock style %}
+{% block indexactive %}active{% endblock indexactive %}
 {% block body %}
 <div class="container">
     <div class="my-2" align="center">
         <div class="runtext-container">
             <marquee>
                 <div class="text-container">
-                    <h1 class="my-1" style="color: rgba(0, 255, 42, 0.884);">Welcome to Text Editer</h1>
+                    <h1 class="my-1 welcome">Welcome to Text Editer</h1>
                 </div>
             </marquee>
         </div>
     </div>
-    <h3 class="my-1" style="color: red;" align="center"><b>Enter yout text here -</b></h3>
+    <h3 class="my-1 textarea" align="center"><b>Enter yout text here -</b></h3>
     <form action="/result/" method="post">
         {% csrf_token %}
         <div class="col-12 my-2">
@@ -89,7 +98,7 @@ padding-left: 56px;
                 <textarea rows="9" cols="80" name="text" id="text"></textarea>
             </div>
             <br>
-            <div class="row">
+            <div class="row justify-content-center">
                 <div class="col-4 first">
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox" id="removepunc" name="removepunc">
@@ -161,7 +170,7 @@ padding-left: 56px;
                 </div>
             </div>
 
-            <div align="center"><button class="btn btn-success my-3" type="submit" id="analyze">Analyze</button></div>
+            <div align="center"><button class="btn btn-success btn-sm my-3" type="submit" id="analyze">Analyze</button></div>
         </div>
     </form>
 </div>
